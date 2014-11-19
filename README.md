@@ -1,7 +1,7 @@
 winter-framework
 ================
 
-An enterprise framework designed and built for Google App Engine
+A professional Java enterprise framework designed and built for Google App Engine.
 
 It will not reinvent the wheel and will use some defacto-libraries to used in GAE projects like:
 * Objectify
@@ -22,4 +22,5 @@ It will provide:
 * An easy to use security with users/roles 
 * Integrations with payments platforms
 
+Official Site: [http://www.cloudwinter.com/winterframework] (Under construction)
 
