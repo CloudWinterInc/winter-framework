@@ -1,4 +1,4 @@
-winter-framework
+Winter framework
 ================
 
 A professional Java enterprise framework designed and built for Google App Engine.
@@ -13,7 +13,7 @@ We don't want to re-invent the wheel so we use some of the defacto-libraries use
 * Hibernate Validations
 * Shiro for security
 
-It provide to you:
+It provides to you:
 * An easy to work Rest API. 
 * A complete task management module for common development tasks (Initial Data setup, Dummy Data, Index fixes, Wipe data).
 * A complete email system using tasks, with velocity templates. 
@@ -23,10 +23,10 @@ It provide to you:
 * Integrations with social networks.  
 * Integrations with payments platforms.
 
-Official Site: [http://www.cloudwinter.com/winterframework] (Under construction)
+Official Site: [http://www.cloudwinter.com/winterframework/] - Under construction -
 
-Official Docs: [http://www.cloudwinter.com/winterframework/docs] (Under construction)
+Official Docs: [http://www.cloudwinter.com/winterframework/docs/] - Under construction - 
 
-Getting Started: [http://www.cloudwinter.com/winterframework/getting-started] (Under construction)
+Getting Started: [http://www.cloudwinter.com/winterframework/getting-started/] - Under construction - 
 
-Feature Video: [http://www.cloudwinter.com/winterframework/video] (Under construction)
+Feature Video: [http://www.cloudwinter.com/winterframework/#video] - Under construction -
