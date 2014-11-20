@@ -1,4 +1,4 @@
-Winter framework
+Winter framework -- under construction --
 ================
 
 A professional Java enterprise framework designed and built for Google App Engine.
