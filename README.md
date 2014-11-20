@@ -3,7 +3,7 @@ winter-framework
 
 A professional Java enterprise framework designed and built for Google App Engine.
 
-It will not reinvent the wheel and will use some defacto-libraries to used in GAE projects like:
+We don't want to re-invent the wheel so we use some of the defacto-libraries used in GAE projects:
 * Objectify
 * Guice
 * Guava libraries
@@ -13,14 +13,20 @@ It will not reinvent the wheel and will use some defacto-libraries to used in GA
 * Hibernate Validations
 * Shiro for security
 
-It will provide:
-* An easy to develop Rest API 
-* A complete task management module for common development tasks (Initial Data setup, Dummy Data, Index fixes, Wipe data)
-* A basic email system using tasks. 
-* A common way to throw & handle exceptions
-* A built-in audit module
-* An easy to use security with users/roles 
-* Integrations with payments platforms
+It provide to you:
+* An easy to work Rest API. 
+* A complete task management module for common development tasks (Initial Data setup, Dummy Data, Index fixes, Wipe data).
+* A complete email system using tasks, with velocity templates. 
+* A common way to throw handle exceptions & custom errors.
+* A built-in audit module.
+* An simple security with users/roles for authentication.
+* Integrations with social networks.  
+* Integrations with payments platforms.
 
 Official Site: [http://www.cloudwinter.com/winterframework] (Under construction)
 
+Official Docs: [http://www.cloudwinter.com/winterframework/docs] (Under construction)
+
+Getting Started: [http://www.cloudwinter.com/winterframework/getting-started] (Under construction)
+
+Feature Video: [http://www.cloudwinter.com/winterframework/video] (Under construction)

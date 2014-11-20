@@ -212,25 +212,6 @@
                     <printSummary>true</printSummary>
                 </configuration>
             </plugin>
-
-
-            <plugin>
-                <groupId>com.google.appengine</groupId>
-                <artifactId>appengine-maven-plugin</artifactId>
-                <version>${gae.version}</version>
-                <configuration>
-                    <email>tomasdepriede@gmail.com</email>
-                    <oauth2>false</oauth2>
-                    <noCookies>true</noCookies>
-                    <passin>true</passin>
-                    <jvmFlags>
-                        <jvmFlag>-Xdebug</jvmFlag>
-                        <jvmFlag>
-                            -Xrunjdwp:transport=dt_socket,address=5000,server=y,suspend=n
-                        </jvmFlag>
-                    </jvmFlags>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 </project>
