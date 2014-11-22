@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @since 11/19/14 10:40 PM
  * @version 1.0.0
  */
-public interface IsModel extends Serializable {
+public interface IsModel extends IsEntity {
 
     /**
      *
