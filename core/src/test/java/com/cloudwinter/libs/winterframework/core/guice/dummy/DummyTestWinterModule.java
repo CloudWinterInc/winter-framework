@@ -15,13 +15,11 @@ import com.cloudwinter.libs.winterframework.core.model.IsEntity;
 public class DummyTestWinterModule extends WinterModule {
 
     @Override
-    protected void configureOfyClasses(
-            List<Class<? extends IsEntity>> ofyClasses) {
+    protected void configureOfyClasses(List<Class<? extends IsEntity>> ofyClasses) {
     }
 
     @Override
-    protected void configureServletClasses(
-            List<Class<? extends HttpServlet>> servletClasses) {
+    protected void configureServletClasses(List<Class<? extends HttpServlet>> servletClasses) {
     }
 
     @Override

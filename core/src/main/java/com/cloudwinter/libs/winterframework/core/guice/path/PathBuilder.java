@@ -27,11 +27,9 @@ public class PathBuilder {
         checkNotNull(servletClass);
         //
         String className = servletClass.getName();
-        BasePath basePath = checkNotNull(
-                servletClass.getAnnotation(BasePath.class),
+        BasePath basePath = checkNotNull(servletClass.getAnnotation(BasePath.class),
                 String.format(BASE_PATH_NOT_FOUND, className));
-        RelativePath relativePath = checkNotNull(
-                servletClass.getAnnotation(RelativePath.class),
+        RelativePath relativePath = checkNotNull(servletClass.getAnnotation(RelativePath.class),
                 String.format(RELATIVE_PATH_NOT_FOUND, className));
         //
         List<String> paths = new ArrayList<>();

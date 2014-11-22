@@ -1,7 +1,5 @@
 package com.cloudwinter.libs.winterframework.core.model;
 
-import java.io.Serializable;
-
 /**
  * Base interface for the models in your application. <br />
  * <br />

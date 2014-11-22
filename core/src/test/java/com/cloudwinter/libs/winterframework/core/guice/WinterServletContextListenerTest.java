@@ -2,9 +2,7 @@ package com.cloudwinter.libs.winterframework.core.guice;
 
 import static org.mockito.Matchers.anyObject;
 import static org.mockito.Matchers.eq;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
@@ -41,17 +39,14 @@ public class WinterServletContextListenerTest {
         //
         contextListener.contextDestroyed(contextEvent);
         //
-        verify(context).removeAttribute(
-                eq(WinterServletContextListener.INJECTOR_ATTRIBUTE));
+        verify(context).removeAttribute(eq(WinterServletContextListener.INJECTOR_ATTRIBUTE));
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void contextInitialized_withNull() throws Exception {
         ServletContextEvent contextEvent = mock(ServletContextEvent.class);
         ServletContext context = mock(ServletContext.class);
-        when(
-                context.getAttribute(WinterServletContextListener.MODULES_ATTRIBUTE))
-                .thenReturn(null);
+        when(context.getAttribute(WinterServletContextListener.MODULES_ATTRIBUTE)).thenReturn(null);
         when(contextEvent.getServletContext()).thenReturn(context);
         //
         contextListener.contextInitialized(contextEvent);
@@ -61,9 +56,8 @@ public class WinterServletContextListenerTest {
     public void contextInitialized_notModuleClass() throws Exception {
         ServletContextEvent contextEvent = mock(ServletContextEvent.class);
         ServletContext context = mock(ServletContext.class);
-        when(
-                context.getInitParameter(WinterServletContextListener.MODULES_ATTRIBUTE))
-                .thenReturn(String.class.getName());
+        when(context.getInitParameter(WinterServletContextListener.MODULES_ATTRIBUTE)).thenReturn(
+                String.class.getName());
         when(contextEvent.getServletContext()).thenReturn(context);
         //
         contextListener.contextInitialized(contextEvent);
@@ -73,16 +67,12 @@ public class WinterServletContextListenerTest {
     public void contextInitialized_startModuleClass() throws Exception {
         ServletContextEvent contextEvent = mock(ServletContextEvent.class);
         ServletContext context = mock(ServletContext.class);
-        when(
-                context.getInitParameter(WinterServletContextListener.MODULES_ATTRIBUTE))
-                .thenReturn(
-                        DummyTestWinterStartModuleWithModule.class.getName());
+        when(context.getInitParameter(WinterServletContextListener.MODULES_ATTRIBUTE)).thenReturn(
+                DummyTestWinterStartModuleWithModule.class.getName());
         when(contextEvent.getServletContext()).thenReturn(context);
         //
         contextListener.contextInitialized(contextEvent);
         //
-        verify(context).setAttribute(
-                eq(WinterServletContextListener.INJECTOR_ATTRIBUTE),
-                (Injector) anyObject());
+        verify(context).setAttribute(eq(WinterServletContextListener.INJECTOR_ATTRIBUTE), (Injector) anyObject());
     }
 }

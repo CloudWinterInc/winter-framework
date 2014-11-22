@@ -26,11 +26,9 @@ import com.googlecode.objectify.cache.AsyncCacheFilter;
  * @since 11/20/14 2:27 PM
  * @version 1.0.0
  */
-public abstract class WinterStartModule extends
-        ExternallyConfigurableServletModule {
+public abstract class WinterStartModule extends ExternallyConfigurableServletModule {
 
-    private final Logger logger = Logger.getLogger(WinterStartModule.class
-            .getSimpleName());
+    private final Logger logger = Logger.getLogger(WinterStartModule.class.getSimpleName());
     protected static final String NO_MODULES_FOUND = "No modules were loaded. Please override the WinterStartModule.getMainModules()";
     /**
      * Used to get the URL to register from a HttpServlet's class annotations ;
@@ -79,13 +77,11 @@ public abstract class WinterStartModule extends
         for (Class<? extends IsEntity> entityClazz : module.getOfyClasses()) {
             ofyFactory.register(entityClazz);
         }
-        for (Class<? extends HttpServlet> entityClazz : module
-                .getServletClasses()) {
+        for (Class<? extends HttpServlet> entityClazz : module.getServletClasses()) {
             // URL config
             List<String> paths = pathBuilder.buildPathFor(entityClazz);
             for (String path : paths) {
-                logger.info(String.format("Registering url: %s with class: %s",
-                        path, entityClazz.getName()));
+                logger.info(String.format("Registering url: %s with class: %s", path, entityClazz.getName()));
                 serve(path, entityClazz);
             }
         }

@@ -70,14 +70,11 @@ public class WinterServletContextListener implements ServletContextListener {
         //
         checkArgument(!Strings.isNullOrEmpty(moduleName), EMPTY_MODULE_ERROR);
         try {
-            WinterStartModule module = (WinterStartModule) Class.forName(
-                    moduleName.trim()).newInstance();
-            context.setAttribute(INJECTOR_ATTRIBUTE,
-                    Guice.createInjector(module));
+            WinterStartModule module = (WinterStartModule) Class.forName(moduleName.trim()).newInstance();
+            context.setAttribute(INJECTOR_ATTRIBUTE, Guice.createInjector(module));
         } catch (Exception e) {
             // TODO convert this to a custom initilization exception
-            throw new IllegalArgumentException(FAIL_TO_LOAD_MODULE_ERROR
-                    + moduleName, e);
+            throw new IllegalArgumentException(FAIL_TO_LOAD_MODULE_ERROR + moduleName, e);
         }
     }
 }

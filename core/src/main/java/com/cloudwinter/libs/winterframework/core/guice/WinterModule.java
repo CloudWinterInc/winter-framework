@@ -32,8 +32,7 @@ public abstract class WinterModule extends AbstractModule {
      *            list with entities to be registed.
      *
      */
-    protected abstract void configureOfyClasses(
-            List<Class<? extends IsEntity>> ofyClasses);
+    protected abstract void configureOfyClasses(List<Class<? extends IsEntity>> ofyClasses);
 
     /**
      * Add to that list the Servlets to be registered.
@@ -42,8 +41,7 @@ public abstract class WinterModule extends AbstractModule {
      *            list with servlets to be registered by guice.
      * 
      */
-    protected abstract void configureServletClasses(
-            List<Class<? extends HttpServlet>> servletClasses);
+    protected abstract void configureServletClasses(List<Class<? extends HttpServlet>> servletClasses);
 
     /**
      * Add to that list the submodules to the current one
@@ -51,8 +49,7 @@ public abstract class WinterModule extends AbstractModule {
      * @param childModules
      *            list where submodules could be added
      */
-    protected abstract void configureChildModules(
-            List<WinterModule> childModules);
+    protected abstract void configureChildModules(List<WinterModule> childModules);
 
     /**
      * Iterate through the submodules and add all their ofy and servlet classes
@@ -67,8 +64,7 @@ public abstract class WinterModule extends AbstractModule {
             child.configure();
             // Add child classes to this module classes
             Iterables.addAll((Collection) ofyClasses, child.getOfyClasses());
-            Iterables.addAll((Collection) servletClasses,
-                    child.getServletClasses());
+            Iterables.addAll((Collection) servletClasses, child.getServletClasses());
         }
     }
 

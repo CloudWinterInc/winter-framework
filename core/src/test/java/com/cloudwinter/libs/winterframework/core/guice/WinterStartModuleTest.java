@@ -2,9 +2,7 @@ package com.cloudwinter.libs.winterframework.core.guice;
 
 import static org.mockito.Matchers.anyObject;
 import static org.mockito.Matchers.eq;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 import java.util.List;
 
@@ -45,8 +43,7 @@ public class WinterStartModuleTest {
         module = new DummyTestWinterStartModule();
         //
         binder = mock(Binder.class);
-        when(binder.bind((Class) anyObject())).thenReturn(
-                mock(AnnotatedBindingBuilder.class));
+        when(binder.bind((Class) anyObject())).thenReturn(mock(AnnotatedBindingBuilder.class));
         //
         module.setOfyFactory(ofyFactory);
         module.setPathBuilder(pathBuilder);
@@ -62,14 +59,12 @@ public class WinterStartModuleTest {
     public void testConfigureServlets_withModules() throws Exception {
         WinterModule winterModule = mock(WinterModule.class);
         // Ofy classes
-        List<Class<? extends IsEntity>> ofyClasses = Lists.newArrayList(
-                DummyTestEntity.class, DummyTestModel.class);
+        List<Class<? extends IsEntity>> ofyClasses = Lists.newArrayList(DummyTestEntity.class, DummyTestModel.class);
         when(winterModule.getOfyClasses()).thenReturn(ofyClasses);
         // Servlet classes
         List servletClasses = Lists.newArrayList(HttpServlet.class);
         when(winterModule.getServletClasses()).thenReturn(servletClasses);
-        when(pathBuilder.buildPathFor(eq(HttpServlet.class))).thenReturn(
-                Lists.newArrayList("/path"));
+        when(pathBuilder.buildPathFor(eq(HttpServlet.class))).thenReturn(Lists.newArrayList("/path"));
         //
         List winterModuleList = Lists.newArrayList(winterModule);
         module.setMainModules(winterModuleList);
