@@ -9,11 +9,11 @@ import static org.mockito.Mockito.when;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 
-import com.cloudwinter.libs.winterframework.core.guice.dummy.DummyTestWinterStartModule;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.cloudwinter.libs.winterframework.core.guice.dummy.DummyTestWinterStartModuleWithModule;
 import com.google.inject.Injector;
 
 /**
@@ -75,7 +75,8 @@ public class WinterServletContextListenerTest {
         ServletContext context = mock(ServletContext.class);
         when(
                 context.getInitParameter(WinterServletContextListener.MODULES_ATTRIBUTE))
-                .thenReturn(DummyTestWinterStartModule.class.getName());
+                .thenReturn(
+                        DummyTestWinterStartModuleWithModule.class.getName());
         when(contextEvent.getServletContext()).thenReturn(context);
         //
         contextListener.contextInitialized(contextEvent);
