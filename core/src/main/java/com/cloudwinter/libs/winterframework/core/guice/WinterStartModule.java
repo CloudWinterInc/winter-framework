@@ -5,6 +5,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.inject.Singleton;
 import javax.servlet.http.HttpServlet;
@@ -28,6 +29,8 @@ import com.googlecode.objectify.cache.AsyncCacheFilter;
 public abstract class WinterStartModule extends
         ExternallyConfigurableServletModule {
 
+    private final Logger logger = Logger.getLogger(WinterStartModule.class
+            .getSimpleName());
     protected static final String NO_MODULES_FOUND = "No modules were loaded. Please override the WinterStartModule.getMainModules()";
     /**
      * Used to get the URL to register from a HttpServlet's class annotations ;
@@ -53,6 +56,7 @@ public abstract class WinterStartModule extends
         }
         //
         filter("/*").through(AsyncCacheFilter.class);
+        bind(AsyncCacheFilter.class).in(Singleton.class);
         filter("/*").through(ObjectifyFilter.class);
         bind(ObjectifyFilter.class).in(Singleton.class);
     }
@@ -78,8 +82,12 @@ public abstract class WinterStartModule extends
         for (Class<? extends HttpServlet> entityClazz : module
                 .getServletClasses()) {
             // URL config
-            String path = pathBuilder.buildPathFor(entityClazz);
-            serve(path, entityClazz);
+            List<String> paths = pathBuilder.buildPathFor(entityClazz);
+            for (String path : paths) {
+                logger.info(String.format("Registering url: %s with class: %s",
+                        path, entityClazz.getName()));
+                serve(path, entityClazz);
+            }
         }
     }
 

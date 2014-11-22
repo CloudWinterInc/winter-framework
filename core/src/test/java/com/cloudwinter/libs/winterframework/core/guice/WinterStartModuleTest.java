@@ -69,7 +69,7 @@ public class WinterStartModuleTest {
         List servletClasses = Lists.newArrayList(HttpServlet.class);
         when(winterModule.getServletClasses()).thenReturn(servletClasses);
         when(pathBuilder.buildPathFor(eq(HttpServlet.class))).thenReturn(
-                "/path");
+                Lists.newArrayList("/path"));
         //
         List winterModuleList = Lists.newArrayList(winterModule);
         module.setMainModules(winterModuleList);
