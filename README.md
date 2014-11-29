@@ -23,10 +23,10 @@ It provides to you:
 * Integrations with social networks.  
 * Integrations with payments platforms.
 
-Official Site: [http://www.cloudwinter.com/winterframework/] Under construction
+Official Site: [http://www.cloudwinter.com/winter-framework/] Under construction
 
-Official Docs: [http://www.cloudwinter.com/winterframework/docs/] Under construction
+Official Docs: [http://www.cloudwinter.com/winter-framework/docs/] Under construction
 
-Getting Started: [http://www.cloudwinter.com/winterframework/getting-started/] Under construction
+Getting Started: [http://www.cloudwinter.com/winter-framework/getting-started/] Under construction
 
-Feature Video: [http://www.cloudwinter.com/winterframework/#video] Under construction
+Feature Video: [http://www.cloudwinter.com/winter-framework/#video] Under construction
